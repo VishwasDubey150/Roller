@@ -11,8 +11,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var image=findViewById<ImageView>(R.id.imageView)
-        var no=findViewById<TextView>(R.id.textView)
         var roll=findViewById<Button>(R.id.button)
 
         roll.setOnClickListener {
@@ -29,24 +27,15 @@ class MainActivity : AppCompatActivity() {
         val dr=when(sides)
         {
             1-> R.drawable.one
-            1->no.setText(sides)
             2-> R.drawable.two
-            2->no.setText(sides)
-            3-> R.drawable.three
-            3->no.setText(sides)
             3-> R.drawable.three
             4-> R.drawable.four
-            4->no.setText(sides)
             5-> R.drawable.five
-            5->no.setText(sides)
-            6-> R.drawable.six
-            6->no.setText(sides)
-
             else ->{
-                Toast.makeText(this,"wrong chioce",Toast.LENGTH_SHORT).show()
+                R.drawable.six
             }
         }
-        image.setImageResource(dr as Int)
+        image.setImageResource(dr)
         var s=sides.toString()
         no.setText(s)
     }
